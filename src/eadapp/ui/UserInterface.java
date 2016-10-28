@@ -22,7 +22,7 @@ public class UserInterface extends Composite {
 		btnLogin.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseDown(MouseEvent e) {
-				System.out.println("MUITO");
+				System.out.println("MUITO!");
 			}
 		});
 		btnLogin.addSelectionListener(new SelectionAdapter() {
