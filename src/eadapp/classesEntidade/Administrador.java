@@ -1,4 +1,4 @@
-package eadapp.models;
+package eadapp.classesEntidade;
 
 public class Administrador {
 
