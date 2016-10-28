@@ -1,4 +1,4 @@
-package eadapp.models;
+package eadapp.classesEntidade;
 
 import java.util.List;
 
