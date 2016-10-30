@@ -1,5 +1,17 @@
 package eadapp.classesEntidade;
 
-public class Professor {
+import java.util.List;
 
+public class Professor extends Conta{
+	private List<Curso> cursosMinistrados;
+	
+	public Professor(String input_cpf, String input_senha,String input_email) {
+		this.cpf = input_cpf;
+		this.senha = input_senha;
+		this.email = input_email;
+	} 
+	
+	public List<Curso> getCursosMinistrados() {
+		return this.cursosMinistrados;
+	}
 }

@@ -4,12 +4,28 @@ package eadapp.classesInterface;
 import java.util.List;
 
 import eadapp.classesEntidade.Curso;
+import eadapp.classesEntidade.Administrador;
+import eadapp.classesEntidade.Professor;
 import eadapp.classesEntidade.Estudante;
+import eadapp.classesEntidade.Conta;
 import eadapp.data.Database;
 
 public class AccountSettings {
 	
-	public void criarConta(String input_cpf, String input_senha, String input_email,Database dataBase){
+	public Conta login(String email, String senha, Database database){
+		/*
+		 * procura na lista de contas da database uma conta com um email e 
+		 * senha especificos e devolve esta conta na saída do método
+		 */
+		
+		
+		Conta umaConta = new Estudante("","","");
+		return umaConta;
+	}
+	
+	
+	
+	public void criarContaEstudante(String input_cpf, String input_senha, String input_email,Database dataBase){
 		/* usuario insere na janela o cpf e senha desejados,
 		 * então esta interface insere um novo estudante na lista
 		 * de estudantes da database do sistema
@@ -20,14 +36,18 @@ public class AccountSettings {
 		dataBase.add(novoEstudante);
 	}
 		
-	public void recuperarSenha(String email, Estudante umEstudante){
-		if (email == umEstudante.getEmail()){
+	public void recuperarSenha(String email, Conta umaConta){
+		if (email == umaConta.getEmail()){
 			//envia uma mensagem para o email, com a opção de trocar a senha
 		}
 	}
 	
-	public List<Curso> visualizarCursosAtuais(Estudante umEstudante){
-		return umEstudante.getCursosInscrito();
+	public List<Curso> visualizarCursosInscritos(Estudante umEstudante){
+		return umEstudante.getCursosInscritos();
+	}
+	
+	public List<Curso> visualizarCursosMinistrados(Professor umProfessor){
+		return umProfessor.getCursosMinistrados();
 	}
 	
 	public List<Curso> buscarCursos(Database database){
@@ -37,17 +57,17 @@ public class AccountSettings {
 		List<Curso> cursosDisponiveis = database.getCursos();
 		return cursosDisponiveis;
 	}
-	public void buscarSuporte(Estudante umEstudante){
+	public void buscarSuporte(){
 		/*
 		 * busca na lista de admins, um admin que esteja disponível para
 		 * contato [estaDisponivel == true]
 		 */
 	}
 	
-	public String visualizarDados(Estudante umEstudante){
+	public String visualizarDados(Conta umaConta){
 		String info = new String();
-		info = info.concat(umEstudante.getCpf());
-		info = info.concat(umEstudante.getNome());
+		info = info.concat(umaConta.getCpf());
+		info = info.concat(umaConta.getNome());
 		
 		return info;
 	}
