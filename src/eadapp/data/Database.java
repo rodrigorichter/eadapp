@@ -1,10 +1,10 @@
 package eadapp.data;
 
 
-import eadapp.models.Estudante;
-import eadapp.models.Professor;
-import eadapp.models.Administrador;
-import eadapp.models.Curso;
+import eadapp.classesEntidade.Estudante;
+import eadapp.classesEntidade.Professor;
+import eadapp.classesEntidade.Administrador;
+import eadapp.classesEntidade.Curso;
 
 import java.util.ArrayList;
 import java.util.Collection;
