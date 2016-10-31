@@ -1,7 +1,7 @@
 package eadapp.data;
 
 
-import eadapp.classesEntidade.Estudante;
+import eadapp.classesEntidade.Conta;
 import eadapp.classesEntidade.Professor;
 import eadapp.classesEntidade.Administrador;
 import eadapp.classesEntidade.Curso;
@@ -14,7 +14,7 @@ import java.util.Map;
 
 
 public class Database {
-	private final ArrayList<Estudante> estudantes;
+	private final ArrayList<Conta> estudantes;
 	private final List<Professor> professores;
 	private final List<Administrador> administradores;
 	private final List<Curso> cursos;
@@ -24,7 +24,7 @@ public class Database {
 	}
 
 	public Database(boolean initData) {
-		this.estudantes = new ArrayList<Estudante>();
+		this.estudantes = new ArrayList<Conta>();
 		this.professores = new ArrayList<Professor>();
 		this.administradores = new ArrayList<Administrador>();
 		this.cursos = new ArrayList<Curso>();
@@ -34,7 +34,7 @@ public class Database {
 		}
 	}
 	
-	public List<Estudante> getEstudantes() {
+	public List<Conta> getEstudantes() {
 		return this.estudantes;
 	}
 	
@@ -50,7 +50,7 @@ public class Database {
 		return this.cursos;
 	}
 	
-	public void add(Estudante e) {
+	public void add(Conta e) {
 		this.estudantes.add(e);
 	}
 	
