@@ -15,7 +15,7 @@ public class AccountSettings {
 	public Conta login(String email, String senha, Database database){
 		/*
 		 * procura na lista de contas da database uma conta com um email e 
-		 * senha especificos e devolve esta conta na saída do método
+		 * senha especificos e devolve esta conta na saï¿½da do mï¿½todo
 		 */
 		
 		
@@ -27,7 +27,7 @@ public class AccountSettings {
 	
 	public void criarContaEstudante(String input_cpf, String input_senha, String input_email,Database dataBase){
 		/* usuario insere na janela o cpf e senha desejados,
-		 * então esta interface insere um novo estudante na lista
+		 * entï¿½o esta interface insere um novo estudante na lista
 		 * de estudantes da database do sistema
 		 * 
 		 */
@@ -38,7 +38,7 @@ public class AccountSettings {
 		
 	public void recuperarSenha(String email, Conta umaConta){
 		if (email == umaConta.getEmail()){
-			//envia uma mensagem para o email, com a opção de trocar a senha
+			//envia uma mensagem para o email, com a opï¿½ï¿½o de trocar a senha
 		}
 	}
 	
@@ -52,14 +52,14 @@ public class AccountSettings {
 	
 	public List<Curso> buscarCursos(Database database){
 		/*devolve a lista de cursos para que eles possam ser mostrados
-		 * na interface gráfica
+		 * na interface grï¿½fica
 		 */
 		List<Curso> cursosDisponiveis = database.getCursos();
 		return cursosDisponiveis;
 	}
 	public void buscarSuporte(){
 		/*
-		 * busca na lista de admins, um admin que esteja disponível para
+		 * busca na lista de admins, um admin que esteja disponivel para
 		 * contato [estaDisponivel == true]
 		 */
 	}
