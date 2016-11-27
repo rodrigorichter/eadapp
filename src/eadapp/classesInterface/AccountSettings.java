@@ -9,6 +9,7 @@ import eadapp.classesEntidade.Professor;
 import eadapp.classesEntidade.Estudante;
 import eadapp.classesEntidade.Conta;
 import eadapp.data.Database;
+import java.sql.SQLException;
 
 public class AccountSettings {
 	
@@ -25,7 +26,7 @@ public class AccountSettings {
 	
 	
 	
-	public void criarContaEstudante(String input_cpf, String input_senha, String input_email,Database dataBase){
+	public void criarContaEstudante(String input_cpf, String input_senha, String input_email,Database dataBase) throws SQLException{
 		/* usuario insere na janela o cpf e senha desejados,
 		 * ent�o esta interface insere um novo estudante na lista
 		 * de estudantes da database do sistema
@@ -50,7 +51,7 @@ public class AccountSettings {
 		return umProfessor.getCursosMinistrados();
 	}
 	
-	public List<Curso> buscarCursos(Database database){
+	public List<Curso> buscarCursos(Database database) throws SQLException{
 		/*devolve a lista de cursos para que eles possam ser mostrados
 		 * na interface gr�fica
 		 */

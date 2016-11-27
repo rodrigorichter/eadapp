@@ -1,1 +1,0 @@
-eadapp.classesEntidade.Administrador

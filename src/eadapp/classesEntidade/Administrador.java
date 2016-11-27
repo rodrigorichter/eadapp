@@ -8,6 +8,7 @@ public class Administrador extends Conta {
 		this.cpf = input_cpf;
 		this.senha = input_senha;
 		this.email = input_email;
+                this.id = 0;
 	} 
 	
 	

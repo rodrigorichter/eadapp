@@ -9,6 +9,15 @@ public class Professor extends Conta{
 		this.cpf = input_cpf;
 		this.senha = input_senha;
 		this.email = input_email;
+                this.id = 0;
+	} 
+        
+        public Professor(int id, String nome, String cpf, String email, String senha) {
+            this.id = id;
+            this.nome = nome;
+            this.cpf = cpf;
+            this.email = email;
+            this.senha = senha;
 	} 
 	
 	public List<Curso> getCursosMinistrados() {
