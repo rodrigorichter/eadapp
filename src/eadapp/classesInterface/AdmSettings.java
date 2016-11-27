@@ -1,13 +1,17 @@
 package eadapp.classesInterface;
 
+
+import eadapp.classesEntidade.Curso;
+import eadapp.classesEntidade.Administrador;
+import eadapp.classesEntidade.Professor;
+import eadapp.classesEntidade.Estudante;
+import eadapp.classesEntidade.Conta;
+import eadapp.data.Database;
+
+
 public class AdmSettings {
 	
-	import eadapp.classesEntidade.Curso;
-	import eadapp.classesEntidade.Administrador;
-	import eadapp.classesEntidade.Professor;
-	import eadapp.classesEntidade.Estudante;
-	import eadapp.classesEntidade.Conta;
-	import eadapp.data.Database;
+	
 	
 	public void banirAluno(){
 		

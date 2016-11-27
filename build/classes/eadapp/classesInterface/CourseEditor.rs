@@ -1,0 +1,1 @@
+eadapp.classesInterface.CourseEditor
