@@ -1,0 +1,33 @@
+Tue Nov 29 21:09:51 BRST 2016 : Apache Derby Servidor de Rede - 10.10.2.0 - (1582446) iniciado e pronto para aceitar conexões na porta 1527 em {3}
+----------------------------------------------------------------
+Tue Nov 29 21:09:59 BRST 2016:
+ Inicializando o Derby versão The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instância a816c00e-0158-b259-fcc0-ffff9979bfef
+no diretório de banco de dados C:\Users\Rodrigo\dev\eadapp\db 
+
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_73-b02
+user.dir=C:\Program Files\glassfish-4.1.1\javadb
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=C:\Users\Rodrigo\dev\eadapp
+Carregador de classe do banco de dados iniciado - derby.database.classpath=''
+----------------------------------------------------------------
+Tue Nov 29 21:10:06 BRST 2016:
+Encerrando a instância a816c00e-0158-b259-fcc0-ffff9979bfef
+Tue Nov 29 21:10:06 BRST 2016 Thread[DRDAConnThread_2,5,main] (DATABASE = db), (DRDAID = {2}), Banco de dados 'db' fechado.
+----------------------------------------------------------------
+Tue Nov 29 21:10:35 BRST 2016:
+ Inicializando o Derby versão The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instância 560740aa-0158-b259-fcc0-ffff9979bfef
+no diretório de banco de dados C:\Users\Rodrigo\dev\eadapp\db 
+
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_73-b02
+user.dir=C:\Program Files\glassfish-4.1.1\javadb
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=C:\Users\Rodrigo\dev\eadapp
+Carregador de classe do banco de dados iniciado - derby.database.classpath=''
+----------------------------------------------------------------
+Wed Nov 30 00:11:59 BRST 2016: Shutting down Derby engine
