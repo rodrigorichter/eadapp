@@ -1,28 +1,71 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package eadapp.classesEntidade;
 
+import java.io.Serializable;
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-public class Estudante extends Conta {
-	private List<Curso> cursosInscritos;
-	
-	public Estudante(String input_cpf, String input_senha,String input_email) {
-		this.cpf = input_cpf;
-		this.senha = input_senha;
-		this.email = input_email;
-		cursosInscritos = null;
-                this.id = 0;
-	} 
+/**
+ *
+ * @author Rodrigo
+ */
+@Entity
+public class Estudante extends Conta implements Serializable {
 
-    public Estudante(int id, String nome, String cpf, String email, String senha) {
-        this.id = id;
-        this.nome = nome;
-        this.cpf = cpf;
-        this.senha = senha;
-        this.email = email;
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    
+    private List<Curso> cursosInscritos;
+    private List<Curso> cursosDiplomado;
+    private List<Prova> provasRealizadas;
+
+    public Estudante() {
     }
-	
-	public List<Curso> getCursosInscritos() {
+    
+    public Estudante(String c, String s, String e) {
+        this.email = e;
+        this.cpf = c;
+        this.senha = s;
+    }
+    
+    public List<Curso> getCursosInscritos() {
 		return this.cursosInscritos;
-	}
-        
+    }
+    
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (id != null ? id.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof Estudante)) {
+            return false;
+        }
+        Estudante other = (Estudante) object;
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "eadapp.classesEntidade.estudantee[ id=" + id + " ]";
+    }
+    
+
+    
 }
