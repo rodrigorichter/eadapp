@@ -55,6 +55,7 @@ public class CourseUser {
                     return 3;
                 }
             }
+            return -1;
 	}
 	
 }
