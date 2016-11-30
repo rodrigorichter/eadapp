@@ -1,18 +1,21 @@
 package eadapp.classesEntidade;
 
+import java.util.List;
+
 public class Prova {
-	private String[][] questoes;
+	private List<Questao> questoes;
 	private int tempoMaximo;
+        private boolean estaDisponivel;
 	
 	
 	
 	public Prova(int tempoMaximo, int numeroQuestoes){
-		this.questoes = new String[numeroQuestoes][2];
+		this.questoes = null;
 		this.tempoMaximo = tempoMaximo;
+                this.estaDisponivel = true; 
 	}
 	
 	public void adicionarQuestao(int nQuestao, String pergunta, String resposta){
-		questoes[nQuestao][0]= pergunta;
-		questoes[nQuestao][1]= resposta;
+		
 	}
 }

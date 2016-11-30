@@ -9,6 +9,7 @@ public class Professor extends Conta{
 		this.cpf = input_cpf;
 		this.senha = input_senha;
 		this.email = input_email;
+                this.estaBanido = false;
 	} 
 	
 	public List<Curso> getCursosMinistrados() {
