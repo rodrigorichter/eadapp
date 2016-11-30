@@ -1,6 +1,6 @@
 
 package eadapp;
-import eadapp.classesEntidade.Estudante;
+import eadapp.classesEntidade.Conta;
 import eadapp.classesInterface.AccountSettings;
 import eadapp.OLD.data.Database;
 import eadapp.ui.LoginScreen;
@@ -23,6 +23,7 @@ public class EadApp {
         emf = javax.persistence.Persistence.createEntityManagerFactory("EadAppPU");
         em = emf.createEntityManager();
         
+       
         LoginScreen ls;
 	ls = new LoginScreen();
         ls.main(args);

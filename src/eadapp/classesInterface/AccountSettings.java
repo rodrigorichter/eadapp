@@ -15,25 +15,29 @@ import java.util.Iterator;
 
 public class AccountSettings {
 	
-	public Conta login(String email, String senha){
+public Conta login(String email, String senha){
             /*
              * procura na lista de contas da database uma conta com um email e 
              * senha especificos e devolve esta conta na sa�da do m�todo
-             */
-
-            List<Conta> contas = em.createQuery("Select c From conta c",
+             
+ */
+            List<Conta> contas = em.createQuery("Select c From Conta c",
                                                     Conta.class).getResultList();
 
             Iterator<Conta> iter = contas.iterator();
             while (iter.hasNext()) {
-                if (iter.next().getEmail().equals(email)) {
-                    if (iter.next().getSenha().equals(senha)) {
-                        Conta c = iter.next();
-                        return c;
+                Conta c = iter.next();
+                if (c.getId() != null && c.getEmail() != null && c.getSenha() != null) {
+                    if (c.getEmail().equals(email)) {
+                        if (c.getSenha().equals(senha)) {
+                            return c;
+                        }
                     }
                 }
             }
             return null;
+   
+          
 	}
 	
 	

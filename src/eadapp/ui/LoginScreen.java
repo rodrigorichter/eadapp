@@ -5,25 +5,20 @@
  */
 package eadapp.ui;
 
-import eadapp.ui.AdminMainScreen;
-/**
- *
- * @author jb_gr
- */
-public class LoginScreen extends javax.swing.JFrame {
+import eadapp.classesInterface.AccountSettings;
+import eadapp.classesEntidade.Conta;
+import eadapp.classesEntidade.Administrador;
+import eadapp.classesEntidade.Professor;
+import eadapp.classesEntidade.Estudante;
 
-    private int nextMenu=0; 
-    /*
-    0 = usuário ainda nao inseriu nada
-    1 = usuário inseriu informações incorretas
-    2 = usuário é um administrador
-    3 = usuário é um professor
-    4 = usuário é um estudante
-    */
-    
+
+public class LoginScreen extends javax.swing.JFrame {
+    AccountSettings accountSettings;
     
     public LoginScreen() {
         initComponents();
+        
+        
        
     }
 
@@ -38,13 +33,13 @@ public class LoginScreen extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        entradaEmail = new javax.swing.JTextField();
+        entradaSenha = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        Acessar = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -52,6 +47,7 @@ public class LoginScreen extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
+        aviso = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -79,10 +75,10 @@ public class LoginScreen extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("Acessar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        Acessar.setText("Acessar");
+        Acessar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                AcessarActionPerformed(evt);
             }
         });
 
@@ -127,7 +123,7 @@ public class LoginScreen extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(127, 127, 127)
-                                .addComponent(jButton3))
+                                .addComponent(Acessar))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(97, 97, 97)
                                 .addComponent(jLabel5))))
@@ -137,8 +133,8 @@ public class LoginScreen extends javax.swing.JFrame {
                             .addComponent(jLabel4))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(entradaEmail)
+                            .addComponent(entradaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -165,6 +161,10 @@ public class LoginScreen extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(336, 336, 336))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(131, 131, 131)
+                .addComponent(aviso)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(213, 213, 213)
@@ -185,21 +185,23 @@ public class LoginScreen extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel2)
-                        .addGap(124, 124, 124)
+                        .addGap(65, 65, 65)
+                        .addComponent(aviso)
+                        .addGap(39, 39, 39)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(entradaEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(entradaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1))
                         .addGap(31, 31, 31)
-                        .addComponent(jButton3)
+                        .addComponent(Acessar)
                         .addGap(15, 15, 15)
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton4)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel6)
@@ -229,7 +231,7 @@ public class LoginScreen extends javax.swing.JFrame {
         dispose(); //Destroy the JFrame object
         
         AdminMainScreen ams;
-	ams = new AdminMainScreen();
+	ams = new AdminMainScreen(null);
         String[] args = new String[0];
         ams.main(args);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -245,37 +247,55 @@ public class LoginScreen extends javax.swing.JFrame {
         ams.main(args);
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        nextMenu = 4;
+    private void AcessarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcessarActionPerformed
+       accountSettings = new AccountSettings();
         
-        if (nextMenu==2){
+        Conta conta = accountSettings.login("aaa", "bbb");
+        if (conta ==null){
                     setVisible(false); //you can't see me!
                      dispose(); //Destroy the JFrame object
         
                      AdminMainScreen ams;
-                     ams = new AdminMainScreen();
+                     ams = new AdminMainScreen(conta);
                      String[] args = new String[0];
                      ams.main(args);
         }
-        if (nextMenu==3){
+        
+        if (conta != null){
+            
+        
+        if (conta instanceof Administrador){
+                    setVisible(false); //you can't see me!
+                     dispose(); //Destroy the JFrame object
+        
+                     AdminMainScreen ams;
+                     ams = new AdminMainScreen(conta);
+                     String[] args = new String[0];
+                     ams.main(args);
+        }
+        if (conta instanceof Professor){
                     setVisible(false); //you can't see me!
                      dispose(); //Destroy the JFrame object
         
                      ProfMainScreen pfs;
-                     pfs = new ProfMainScreen();
+                     pfs = new ProfMainScreen(conta);
                      String[] args = new String[0];
                      pfs.main(args);
         }
-        if (nextMenu==4){
+        if (conta instanceof Estudante){
                     setVisible(false); //you can't see me!
                      dispose(); //Destroy the JFrame object
         
                      EstudMainScreen ems;
-                     ems = new EstudMainScreen();
+                     ems = new EstudMainScreen(conta);
                      String[] args = new String[0];
                      ems.main(args);
         }
-    }//GEN-LAST:event_jButton3ActionPerformed
+        
+        }
+        else
+            aviso.setText("email ou senha incorretos!");
+    }//GEN-LAST:event_AcessarActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:]
@@ -296,7 +316,7 @@ public class LoginScreen extends javax.swing.JFrame {
         dispose(); //Destroy the JFrame object
         
         ProfMainScreen ams;
-	ams = new ProfMainScreen();
+	ams = new ProfMainScreen(null);
         String[] args = new String[0];
         ams.main(args);
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -308,7 +328,7 @@ public class LoginScreen extends javax.swing.JFrame {
         dispose(); //Destroy the JFrame object
         
         EstudMainScreen ams;
-	ams = new EstudMainScreen();
+	ams = new EstudMainScreen(null);
         String[] args = new String[0];
         ams.main(args);
     }//GEN-LAST:event_jButton6ActionPerformed
@@ -350,9 +370,12 @@ public class LoginScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Acessar;
+    private javax.swing.JLabel aviso;
+    private javax.swing.JTextField entradaEmail;
+    private javax.swing.JTextField entradaSenha;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
@@ -364,7 +387,5 @@ public class LoginScreen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

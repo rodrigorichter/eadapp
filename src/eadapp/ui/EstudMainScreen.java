@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package eadapp.ui;
-
+import eadapp.classesEntidade.Conta;
+import eadapp.classesEntidade.Estudante;
 /**
  *
  * @author jb_gr
@@ -14,7 +15,7 @@ public class EstudMainScreen extends javax.swing.JFrame {
     /**
      * Creates new form EstudMainScreen
      */
-    public EstudMainScreen() {
+    public EstudMainScreen(Conta conta) {
         initComponents();
     }
 
@@ -207,7 +208,7 @@ public class EstudMainScreen extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EstudMainScreen().setVisible(true);
+                new EstudMainScreen(null).setVisible(true);
             }
         });
     }
