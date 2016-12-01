@@ -8,6 +8,10 @@ import static eadapp.EadApp.em;
 import eadapp.classesInterface.AccountSettings;
 import java.sql.SQLException;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+
 /**
  *
  * @author jb_gr
@@ -173,7 +177,13 @@ public class RegistrationScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
         AccountSettings accountSettings = new AccountSettings();
         if (senha1.getText().equals(repetirsenha.getText())){
-            accountSettings.criarContaEstudante(cpf1.getText(), senha1.getText(), email1.getText());
+
+            try {
+                accountSettings.criarContaEstudante(cpf1.getText(), senha1.getText(), email1.getText());
+            } catch (SQLException ex) {
+                Logger.getLogger(RegistrationScreen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
            
             aviso.setText("Conta de estudante criada com sucesso!");
         }

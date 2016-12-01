@@ -73,7 +73,7 @@ public Conta login(String email, String senha){
 		/*devolve a lista de cursos para que eles possam ser mostrados
 		 * na interface gr�fica
 		 */
-            List<Curso> cursos = em.createQuery("SELECT c FROM EmailDomainTrust c").getResultList();
+            List<Curso> cursos = em.createQuery("SELECT c FROM Curso c").getResultList();
             return cursos;
 	}
 	public void buscarSuporte(){

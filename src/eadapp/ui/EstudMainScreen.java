@@ -175,7 +175,10 @@ public class EstudMainScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+        VisualizarCursosScreen vcs;
+	vcs = new VisualizarCursosScreen();
+        String[] args = new String[0];
+        vcs.main(args);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     /**

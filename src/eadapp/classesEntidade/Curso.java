@@ -134,4 +134,12 @@ public class Curso implements Serializable {
     public void cadastrarPedidoDeDiplomacao(Estudante e) {
         alunosPediramDiplomacao.add(e);
     }
+
+    public String getNome() {
+        return this.nome;
+    }
+
+    public List<String> getLinks() {
+        return this.links;
+    }
 }

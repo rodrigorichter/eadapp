@@ -5,6 +5,14 @@
  */
 package eadapp.ui;
 
+import static eadapp.EadApp.em;
+import eadapp.classesEntidade.Conta;
+import eadapp.classesEntidade.Curso;
+import java.util.Iterator;
+import java.util.List;
+import javax.swing.JButton;
+import javax.swing.JPanel;
+
 /**
  *
  * @author jb_gr
@@ -16,6 +24,37 @@ public class VisualizarCursosScreen extends javax.swing.JFrame {
      */
     public VisualizarCursosScreen() {
         initComponents();
+        /*List<Curso> cursos = em.createQuery("Select c From Curso c",
+                                                    Curso.class).getResultList();
+        displayCursos(cursos);*/
+        Iterator<Curso> iter = cursosQuery.iterator();
+        while (iter.hasNext()) {
+            Curso c = iter.next();
+            
+            JButton btnCurso = new javax.swing.JButton();
+
+            btnCurso.setText(c.getNome());
+            btnCurso.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btnCursoActionPerformed(evt, c);
+                }
+            });
+
+            this.add(btnCurso);
+            
+            
+
+        }
+        this.revalidate();
+        this.repaint();
+    }
+    
+    private void btnCursoActionPerformed(java.awt.event.ActionEvent evt, Curso c) {                                         
+        CursoScreen mcs;
+        System.out.println("eaeee"+c.getLinks());
+        
+        mcs = new CursoScreen(c);
+        mcs.main(c);
     }
 
     /**
@@ -27,26 +66,15 @@ public class VisualizarCursosScreen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
+        javax.persistence.Query q = java.beans.Beans.isDesignTime() ? null : em.createQuery("SELECT c FROM Curso c");
+        cursosQuery = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : q.getResultList();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new java.awt.FlowLayout());
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 592, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(193, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(130, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(92, 92, 92))
-        );
+        jLabel2.setText("Cursos Inscritos");
+        getContentPane().add(jLabel2);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -55,6 +83,7 @@ public class VisualizarCursosScreen extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -85,8 +114,13 @@ public class VisualizarCursosScreen extends javax.swing.JFrame {
             }
         });
     }
+    
+    public void displayCursos(List<Curso> c) {
+        cursosQuery.add(c);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JScrollPane jScrollPane1;
+    private java.util.List cursosQuery;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
