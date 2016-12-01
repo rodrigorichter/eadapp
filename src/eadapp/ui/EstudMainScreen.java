@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package eadapp.ui;
-
+import eadapp.classesEntidade.Conta;
+import eadapp.classesEntidade.Estudante;
 /**
  *
  * @author jb_gr
@@ -14,7 +15,7 @@ public class EstudMainScreen extends javax.swing.JFrame {
     /**
      * Creates new form EstudMainScreen
      */
-    public EstudMainScreen() {
+    public EstudMainScreen(Conta conta) {
         initComponents();
     }
 
@@ -174,7 +175,10 @@ public class EstudMainScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+        VisualizarCursosScreen vcs;
+	vcs = new VisualizarCursosScreen();
+        String[] args = new String[0];
+        vcs.main(args);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
@@ -207,7 +211,7 @@ public class EstudMainScreen extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EstudMainScreen().setVisible(true);
+                new EstudMainScreen(null).setVisible(true);
             }
         });
     }

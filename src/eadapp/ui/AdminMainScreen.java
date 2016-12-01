@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package eadapp.ui;
-
+import eadapp.classesEntidade.Conta;
+import eadapp.classesEntidade.Administrador;
 /**
  *
  * @author jb_gr
@@ -14,7 +15,7 @@ public class AdminMainScreen extends javax.swing.JFrame {
     /**
      * Creates new form AdminMainScreen
      */
-    public AdminMainScreen() {
+    public AdminMainScreen(Conta conta) {
         initComponents();
     }
 
@@ -239,7 +240,7 @@ public class AdminMainScreen extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AdminMainScreen().setVisible(true);
+                new AdminMainScreen(null).setVisible(true);
             }
         });
     }
