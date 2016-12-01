@@ -250,7 +250,11 @@ public class LoginScreen extends javax.swing.JFrame {
     private void AcessarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcessarActionPerformed
        accountSettings = new AccountSettings();
         
+<<<<<<< HEAD
         Conta conta = accountSettings.login("mr@catra.com", "123");
+=======
+        Conta conta = accountSettings.login("aaa", "bbb");
+>>>>>>> balistaMaster
         if (conta ==null){
                     setVisible(false); //you can't see me!
                      dispose(); //Destroy the JFrame object
