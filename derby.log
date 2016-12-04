@@ -1,7 +1,7 @@
-Thu Dec 01 18:33:23 BRST 2016 : Apache Derby Servidor de Rede - 10.10.2.0 - (1582446) iniciado e pronto para aceitar conexões na porta 1527 em {3}
+Sat Dec 03 22:42:01 BRST 2016 : Apache Derby Servidor de Rede - 10.10.2.0 - (1582446) iniciado e pronto para aceitar conexões na porta 1527 em {3}
 ----------------------------------------------------------------
-Thu Dec 01 18:33:24 BRST 2016:
- Inicializando o Derby versão The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instância a816c00e-0158-bc17-752a-ffff9f3ea861
+Sat Dec 03 22:42:01 BRST 2016:
+ Inicializando o Derby versão The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instância a816c00e-0158-c747-cced-ffff9f3ea861
 no diretório de banco de dados C:\Users\jb_gr\OneDrive\Documentos\eadapp\db 
 
 java.vendor=Oracle Corporation
@@ -12,9 +12,3 @@ os.arch=amd64
 os.version=10.0
 derby.system.home=C:\Users\jb_gr\OneDrive\Documentos\eadapp
 Carregador de classe do banco de dados iniciado - derby.database.classpath=''
-----------------------------------------------------------------
-Thu Dec 01 19:14:45 BRST 2016: Shutting down Derby engine
-----------------------------------------------------------------
-Thu Dec 01 19:14:45 BRST 2016:
-Encerrando a instância a816c00e-0158-bc17-752a-ffff9f3ea861
-----------------------------------------------------------------
